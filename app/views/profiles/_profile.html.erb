@@ -1,0 +1,22 @@
+
+<div id="<%= dom_id profile %>">
+  <p>
+    <strong><%= t('activerecord.attributes.profile.name')%></strong>
+    <%= profile.name %>
+  </p>
+
+  <p>
+    <strong><%= t('activerecord.attributes.profile.surname')%></strong>
+    <%= profile.surname %>
+  </p>
+  <p>
+    <strong><%= t('activerecord.attributes.profile.image') %></strong>
+    <% if profile.image.attached? %>
+      <%= image_tag(profile.image, alt: profile.name) %>
+    <% else %>
+      <em>No image available</em>
+    <% end %>
+  </p>
+
+</div>
+
